@@ -1,3 +1,4 @@
+import Image from '@/components/Image'
 import Link from '@/components/Link'
 import Tag from '@/components/Tag'
 import siteMetadata from '@/data/siteMetadata'
@@ -7,20 +8,41 @@ import NewsletterForm from 'pliny/ui/NewsletterForm'
 const MAX_DISPLAY = 5
 
 export default function Home({ posts }) {
+  const heroPost = posts[0]
   return (
     <>
       <div className="divide-y divide-gray-200 dark:divide-gray-700">
-        <div className="space-y-2 pb-8 pt-6 md:space-y-5">
-          <h1 className="text-3xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-4xl sm:leading-10 md:text-6xl md:leading-14">
-            Latest
+        <div className="space-y-2 py-12 md:space-y-5">
+          <h1 className="text-4xl font-extrabold uppercase leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-4xl sm:leading-10 md:text-6xl md:leading-14 lg:text-8xl">
+            Project of the day.
           </h1>
           <p className="text-lg leading-7 text-gray-500 dark:text-gray-400">
             {siteMetadata.description}
           </p>
         </div>
+        <Link href={`/blog/${heroPost?.slug}`}>
+          <div className="relative flex h-[40em] w-full flex-col overflow-hidden">
+            <Image
+              content="contain"
+              fill
+              src={'/static/images/canada/lake.jpg'}
+              alt="Hero article image."
+            />
+            <div className="absolute bottom-6 left-6 flex flex-col bg-gray-950 p-2 text-white">
+              <h2 className="text-xl font-extrabold uppercase lg:text-3xl">{heroPost?.title}</h2>
+              <p className="text-xs text-gray-300">
+                {heroPost?.tags.map((tag, i) => {
+                  return i == heroPost.tags.length - 1 ? `${tag}` : `${tag} | `
+                })}
+              </p>
+              <p className="text-md text-white">heroPost?.summary</p>
+            </div>
+          </div>
+        </Link>
+
         <ul className="divide-y divide-gray-200 dark:divide-gray-700">
           {!posts.length && 'No posts found.'}
-          {posts.slice(0, MAX_DISPLAY).map((post) => {
+          {posts.slice(1, MAX_DISPLAY).map((post) => {
             const { slug, date, title, summary, tags } = post
             return (
               <li key={slug} className="py-12">
