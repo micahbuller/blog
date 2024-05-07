@@ -21,21 +21,21 @@ export default function Home({ posts }) {
           </p>
         </div>
         <Link href={`/blog/${heroPost?.slug}`}>
-          <div className="relative flex h-[40em] w-full flex-col overflow-hidden">
+          <div className="relative flex aspect-[3/4] h-auto w-full flex-col overflow-hidden sm:aspect-video">
             <Image
-              content="contain"
+              className="object-cover"
               fill
               src={'/static/images/canada/lake.jpg'}
               alt="Hero article image."
             />
-            <div className="absolute bottom-6 left-6 flex flex-col bg-gray-950 p-2 text-white">
-              <h2 className="text-xl font-extrabold uppercase lg:text-3xl">{heroPost?.title}</h2>
+            <div className="absolute bottom-6 left-6 flex max-w-[20em] flex-col space-y-1 bg-gray-950 p-2 text-white md:max-w-sm">
+              <h2 className="text-lg font-extrabold uppercase lg:text-2xl">{heroPost?.title}</h2>
               <p className="text-xs text-gray-300">
                 {heroPost?.tags.map((tag, i) => {
                   return i == heroPost.tags.length - 1 ? `${tag}` : `${tag} | `
                 })}
               </p>
-              <p className="text-md text-white">heroPost?.summary</p>
+              <p className="text-md text-white">{heroPost?.summary.slice(0, 64) + '...'}</p>
             </div>
           </div>
         </Link>
