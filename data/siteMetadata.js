@@ -3,7 +3,7 @@ const siteMetadata = {
   title: 'Micah Buller',
   author: 'Micah Buller',
   headerTitle: '',
-  description: 'Envisioning a new aspirational framework for businesses and products.',
+  description: 'Envisioning new aspirational frameworks for products and organizations.',
   language: 'en-us',
   theme: 'system', // system, dark or light
   siteUrl: 'https://www.micahbuller.com/',

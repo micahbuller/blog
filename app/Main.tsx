@@ -12,7 +12,7 @@ export default function Home({ posts }) {
   return (
     <>
       <div>
-        <div className="space-y-2 py-12 text-center md:space-y-5 md:text-left">
+        <div className="hidden space-y-2 py-12 text-center sm:block md:space-y-5 md:text-left">
           <h1 className="text-4xl font-extrabold uppercase leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-4xl sm:leading-10 md:text-6xl md:leading-14 lg:text-8xl">
             Project of the day.
           </h1>
