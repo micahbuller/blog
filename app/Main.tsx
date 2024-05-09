@@ -11,8 +11,8 @@ export default function Home({ posts }) {
   const heroPost = posts[0]
   return (
     <>
-      <div className="divide-y divide-gray-200 dark:divide-gray-700">
-        <div className="space-y-2 py-12 md:space-y-5">
+      <div>
+        <div className="space-y-2 py-12 text-center md:space-y-5 md:text-left">
           <h1 className="text-4xl font-extrabold uppercase leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-4xl sm:leading-10 md:text-6xl md:leading-14 lg:text-8xl">
             Project of the day.
           </h1>
@@ -21,25 +21,24 @@ export default function Home({ posts }) {
           </p>
         </div>
         <Link href={`/blog/${heroPost?.slug}`}>
-          <div className="relative flex aspect-[3/4] h-auto w-full flex-col overflow-hidden sm:aspect-video">
-            <Image
-              className="object-cover"
-              fill
-              src={'/static/images/canada/lake.jpg'}
-              alt="Hero article image."
-            />
-            <div className="absolute bottom-6 left-6 flex max-w-[20em] flex-col space-y-1 bg-gray-950 p-2 text-white md:max-w-sm">
-              <h2 className="text-lg font-extrabold uppercase lg:text-2xl">{heroPost?.title}</h2>
-              <p className="text-xs text-gray-300">
-                {heroPost?.tags.map((tag, i) => {
-                  return i == heroPost.tags.length - 1 ? `${tag}` : `${tag} | `
-                })}
-              </p>
-              <p className="text-md text-white">{heroPost?.summary.slice(0, 64) + '...'}</p>
+          <div className="relative flex h-[40em] w-full flex-col overflow-hidden md:aspect-video md:h-auto md:flex-row">
+            <div className="flex h-full w-full flex-col justify-center space-y-4 bg-gray-950 p-6 text-center text-white sm:p-12 md:w-1/2 md:p-24">
+              <h2 className="text-xl font-extrabold uppercase xl:text-2xl">{heroPost?.title}</h2>
+              <p className="text-md text-white">{heroPost?.summary.slice(0, 128) + '...'}</p>
+            </div>
+            <div className="relative flex h-full w-full md:w-1/2">
+              <Image
+                className="object-cover"
+                fill
+                src={heroPost?.images[0]}
+                alt="Hero article image."
+              />
             </div>
           </div>
         </Link>
-
+        <h2 className="mt-12 text-3xl font-extrabold uppercase leading-9 tracking-tight text-gray-900 dark:text-gray-100">
+          More Projects
+        </h2>
         <ul className="divide-y divide-gray-200 dark:divide-gray-700">
           {!posts.length && 'No posts found.'}
           {posts.slice(1, MAX_DISPLAY).map((post) => {
