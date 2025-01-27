@@ -3,7 +3,7 @@ const siteMetadata = {
   title: 'Micah Buller',
   author: 'Micah Buller',
   headerTitle: '',
-  description: 'Envisioning new aspirational frameworks for products and organizations.',
+  description: 'Through love of the outdoors, and science based nutrition we find ourselves at ease.',
   language: 'en-us',
   theme: 'system', // system, dark or light
   siteUrl: 'https://www.micahbuller.com/',

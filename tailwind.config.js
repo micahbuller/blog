@@ -22,11 +22,13 @@ module.exports = {
         14: '3.5rem',
       },
       fontFamily: {
-        sans: ['var(--font-space-grotesk)', ...fontFamily.sans],
+        sans: ['var(--font-edu)', ...fontFamily.sans],
       },
       colors: {
         primary: colors.neutral,
         gray: colors.neutral,
+        black: '#161616',
+        background: '#F6F6F6',
       },
       typography: ({ theme }) => ({
         DEFAULT: {
