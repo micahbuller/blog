@@ -23,6 +23,7 @@ module.exports = {
       },
       fontFamily: {
         sans: ['var(--font-edu)', ...fontFamily.sans],
+        mono: ['var(--font-univers)', ...fontFamily.mono],
       },
       colors: {
         primary: colors.neutral,

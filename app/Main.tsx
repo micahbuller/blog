@@ -13,17 +13,27 @@ const menu = [
   { name: 'WORKS', slug: '/' },
 ]
 
+const items = [
+  { name: 'HOUSE OF HEALTH', slug: '/', image: '' },
+  { name: 'UIIO', slug: '/', image: '' },
+  { name: 'TABLA RASA', slug: '/', image: '' },
+  { name: 'OCEAN STUDIO', slug: '/', image: '' },
+  { name: 'DREAMS', slug: '/', image: '' },
+]
+
 export default function Home({ posts }) {
   const heroPost = posts[0]
   return (
     <>
-      <div className="relative flex h-dvh max-h-dvh w-full flex-col p-2">
-        <div className="flex h-full max-w-5xl flex-col">
+      <div className="relative flex h-dvh max-h-dvh w-full flex-col md:flex-row">
+        <div className="relative flex h-dvh max-h-dvh flex-col">
           {/* Menu Items */}
           <div className="flex w-full flex-row justify-between">
             {menu.map((item, id) => (
               <Link className="group hover:bg-black" key={id} href={item.slug}>
-                <p className="group-hover:text-background capitalize text-black">{item.name}</p>
+                <p className="group-hover:text-background text-xl capitalize text-black">
+                  {item.name}
+                </p>
               </Link>
             ))}
           </div>
@@ -89,9 +99,9 @@ export default function Home({ posts }) {
           </div>
 
           {/* Logo */}
-          <div className="align-center align-center relative flex flex-1 flex-row justify-center p-6">
+          <div className="align-center relative mx-auto flex flex-1 flex-row justify-center p-6">
             <svg
-              className="h-auto w-[50%] fill-black"
+              className="aspect-[673/822] h-full w-full fill-black"
               id="logo"
               data-name="logo"
               xmlns="http://www.w3.org/2000/svg"
@@ -109,6 +119,23 @@ export default function Home({ posts }) {
               Exploring and pushing boudaries while encouraging others to find truth.
             </p>
           </div>
+        </div>
+        {/* Vertical Column */}
+        <div className="hidden h-full w-96 justify-between border-l-2 border-black lg:ml-4 lg:flex lg:flex-col lg:pl-4">
+          {items.map((item, id) => (
+            <Link
+              className=" bg-slate group flex h-full w-full flex-1 flex-row border-b-2 border-black last:border-0 hover:bg-black"
+              key={id}
+              href={item.slug}
+            >
+              <div className="flex aspect-[3/4] h-full w-auto bg-slate-200"></div>
+              <div className="flex w-full flex-row justify-center">
+                <p className="group-hover:text-background text-center font-mono text-3xl capitalize text-black">
+                  {item.name}
+                </p>
+              </div>
+            </Link>
+          ))}
         </div>
       </div>
 
