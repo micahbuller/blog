@@ -35,7 +35,7 @@ export default function Home({ posts }) {
   return (
     <>
       <div className="relative flex w-full flex-col h-dvh md:max-h-dvh md:flex-row">
-        <div className="relative flex w-full flex-col h-dvh md:max-h-dvh">
+        <div className="relative flex w-full flex-col h-dvh md:max-h-dvh justify-between">
           {/* Menu Items */}
           <div className="flex w-full flex-row justify-between">
             {menu.map((item, id) => (
@@ -46,8 +46,7 @@ export default function Home({ posts }) {
               </Link>
             ))}
           </div>
-          <div className="flex w-full flex-row">
-            {/* Personal name */}
+          {/* <div className="flex w-full flex-row">
             <svg
               id="MicahBuller"
               data-name="MicahBuller"
@@ -71,9 +70,9 @@ export default function Home({ posts }) {
                 </g>
               </g>
             </svg>
-          </div>
+          </div> */}
 
-          <div className="flex w-full flex-row">
+          {/* <div className="flex w-full flex-row">
             <svg
               id="Layer_2"
               data-name="Layer 2"
@@ -105,12 +104,12 @@ export default function Home({ posts }) {
                 </g>
               </g>
             </svg>
-          </div>
+          </div> */}
 
           {/* Logo */}
-          <div className="align-center relative mx-auto hidden flex-1 flex-row justify-center p-6 md:flex">
+          <div className="align-center relative mx-auto flex-1 flex-row justify-center p-6 flex">
             <svg
-              className="aspect-[673/822] h-full w-full fill-black"
+              className="aspect-[673/822] max-w-48 h-full w-full fill-black"
               id="logo"
               data-name="logo"
               xmlns="http://www.w3.org/2000/svg"
@@ -130,23 +129,23 @@ export default function Home({ posts }) {
           </div>
         </div>
         {/* Vertical Column */}
-        <div className="grid grid-cols-2 h-full w-full justify-between md:border-l-2 border-black md:ml-4 md:w-80 md:shrink-0 md:grid-cols-1">
+        <div className="grid grid-cols-2  h-full w-full justify-between md:border-l-2 md:border-black md:ml-4 md:w-80 md:shrink-0 md:grid-cols-1">
           {items.map((item, id) => (
             <Link
-              className="group ml-4 flex h-[90%] w-full flex-row border-b-2 border-black pr-4 last:border-0 hover:bg-black"
+              className="group mt-12 md:mt-0 md:ml-4 flex h-[90%] w-full flex-col md:flex-row md:border-b-2 md:border-black pr-4 last:border-0 md:hover:bg-black"
               key={id}
               href={item.slug}
             >
-              <div className="relative shrink-0 flex aspect-[3/4] h-full w-auto">
+              <div className="relative shrink-0 flex aspect-video md:aspect-[3/4] border-b-2 border-black md:border-b-0 h-auto w-full md:h-full md:w-auto">
                 <Image
-                  className="object-cover grayscale group-hover:grayscale-0"
+                  className="object-cover grayscale md:group-hover:grayscale-0"
                   fill
                   src={item?.image}
                   alt="Item Image"
                 />
               </div>
-              <div className="flex w-full flex-row justify-center">
-                <p className="group-hover:text-background text-center font-mono text-3xl capitalize text-black">
+              <div className="flex w-full flex-row justify-center mt-2">
+                <p className="md:group-hover:text-background text-center font-bold font-mono text-xl md:text-3xl capitalize text-black">
                   {item.name}
                 </p>
               </div>
