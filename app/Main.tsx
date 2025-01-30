@@ -5,6 +5,14 @@ import siteMetadata from '@/data/siteMetadata'
 import { formatDate } from 'pliny/utils/formatDate'
 import NewsletterForm from 'pliny/ui/NewsletterForm'
 
+import music from "./assets/images/music.jpg"
+import houseofhealth from "./assets/images/houseofhealth.jpg"
+import events from "./assets/images/events.jpg"
+import oceanstudio from "./assets/images/oceanstudio.jpg"
+import tablarasa from "./assets/images/tablarasa.jpg"
+import uiio from "./assets/images/uiio.jpg"
+
+
 const MAX_DISPLAY = 5
 
 const menu = [
@@ -14,19 +22,20 @@ const menu = [
 ]
 
 const items = [
-  { name: 'HOUSE OF HEALTH', slug: '/', image: '' },
-  { name: 'UIIO', slug: '/', image: '' },
-  { name: 'TABLA RASA', slug: '/', image: '' },
-  { name: 'OCEAN STUDIO', slug: '/', image: '' },
-  { name: 'DREAMS', slug: '/', image: '' },
+  { name: 'HOUSE OF HEALTH', slug: '/', image: houseofhealth },
+  { name: 'UIIO', slug: '/', image: uiio },
+  { name: 'TABLA RASA', slug: '/', image: tablarasa },
+  { name: 'OCEAN STUDIO', slug: '/', image: oceanstudio },
+  { name: 'MUSIC', slug: '/', image: music },
+  { name: 'EVENTS', slug: '/', image: events },
 ]
 
 export default function Home({ posts }) {
   const heroPost = posts[0]
   return (
     <>
-      <div className="relative flex h-dvh max-h-dvh w-full flex-col md:flex-row">
-        <div className="relative flex h-dvh max-h-dvh flex-col">
+      <div className="relative flex w-full flex-col h-dvh md:max-h-dvh md:flex-row">
+        <div className="relative flex w-full flex-col h-dvh md:max-h-dvh">
           {/* Menu Items */}
           <div className="flex w-full flex-row justify-between">
             {menu.map((item, id) => (
@@ -99,7 +108,7 @@ export default function Home({ posts }) {
           </div>
 
           {/* Logo */}
-          <div className="align-center relative mx-auto flex flex-1 flex-row justify-center p-6">
+          <div className="align-center relative mx-auto hidden flex-1 flex-row justify-center p-6 md:flex">
             <svg
               className="aspect-[673/822] h-full w-full fill-black"
               id="logo"
@@ -121,14 +130,21 @@ export default function Home({ posts }) {
           </div>
         </div>
         {/* Vertical Column */}
-        <div className="hidden h-full w-96 justify-between border-l-2 border-black lg:ml-4 lg:flex lg:flex-col lg:pl-4">
+        <div className="grid grid-cols-2 h-full w-full justify-between md:border-l-2 border-black md:ml-4 md:w-80 md:shrink-0 md:grid-cols-1">
           {items.map((item, id) => (
             <Link
-              className=" bg-slate group flex h-full w-full flex-1 flex-row border-b-2 border-black last:border-0 hover:bg-black"
+              className="group ml-4 flex h-[90%] w-full flex-row border-b-2 border-black pr-4 last:border-0 hover:bg-black"
               key={id}
               href={item.slug}
             >
-              <div className="flex aspect-[3/4] h-full w-auto bg-slate-200"></div>
+              <div className="relative shrink-0 flex aspect-[3/4] h-full w-auto">
+                <Image
+                  className="object-cover grayscale group-hover:grayscale-0"
+                  fill
+                  src={item?.image}
+                  alt="Item Image"
+                />
+              </div>
               <div className="flex w-full flex-row justify-center">
                 <p className="group-hover:text-background text-center font-mono text-3xl capitalize text-black">
                   {item.name}
