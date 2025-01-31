@@ -1,12 +1,12 @@
 import Image from '@/components/Image'
 import Link from '@/components/Link'
 
-import music from "./assets/images/music.jpg"
-import houseofhealth from "./assets/images/houseofhealth.jpg"
-import events from "./assets/images/events.jpg"
-import oceanstudio from "./assets/images/oceanstudio.jpg"
-import tablarasa from "./assets/images/tablarasa.jpg"
-import uiio from "./assets/images/uiio.jpg"
+import music from './assets/images/music.jpg'
+import houseofhealth from './assets/images/houseofhealth.jpg'
+import events from './assets/images/events.jpg'
+import oceanstudio from './assets/images/oceanstudio.jpg'
+import tablarasa from './assets/images/tablarasa.jpg'
+import uiio from './assets/images/uiio.jpg'
 
 const menu = [
   { name: 'INFO', slug: '/about' },
@@ -26,8 +26,8 @@ const items = [
 export default function Home({ posts }) {
   return (
     <>
-      <div className="relative flex w-full flex-col h-dvh md:max-h-dvh md:flex-row">
-        <div className="relative flex w-full flex-col h-dvh md:max-h-dvh justify-between">
+      <div className="relative flex h-dvh w-full flex-col md:max-h-dvh md:flex-row">
+        <div className="relative flex h-dvh w-full flex-col justify-between md:max-h-dvh">
           {/* Menu Items */}
           <div className="flex w-full flex-row justify-between">
             {menu.map((item, id) => (
@@ -99,9 +99,9 @@ export default function Home({ posts }) {
           </div> */}
 
           {/* Logo */}
-          <div className="align-center relative mx-auto flex-1 flex-row justify-center p-6 flex">
+          <div className="align-center relative mx-auto flex flex-1 flex-row justify-center p-6">
             <svg
-              className="aspect-[673/822] max-w-48 h-full w-full fill-black"
+              className="aspect-[673/822] h-full w-full max-w-48 fill-black"
               id="logo"
               data-name="logo"
               xmlns="http://www.w3.org/2000/svg"
@@ -116,19 +116,19 @@ export default function Home({ posts }) {
           {/* Memo */}
           <div className="flex w-full flex-row">
             <p className="text-2xl">
-            I am committed to building a life that balances vitality and artistic expression.
+              I am committed to building a life that balances vitality and artistic expression.
             </p>
           </div>
         </div>
         {/* Vertical Column */}
-        <div className="grid grid-cols-2  h-full w-full justify-between md:border-l-2 md:border-black md:ml-4 md:w-80 md:shrink-0 md:grid-cols-1">
+        <div className="grid h-full  w-full grid-cols-2 justify-between md:ml-4 md:w-80 md:shrink-0 md:grid-cols-1 md:border-l-2 md:border-black">
           {items.map((item, id) => (
             <Link
-              className="group mt-12 md:mt-0 md:ml-4 flex h-[90%] w-full flex-col md:flex-row md:border-b-2 md:border-black pr-4 last:border-0 md:hover:bg-black"
+              className="group mt-12 flex h-[90%] w-full flex-col pr-4 last:border-0 md:ml-4 md:mt-0 md:flex-row md:border-b-2 md:border-black md:hover:bg-black"
               key={id}
               href={item.slug}
             >
-              <div className="relative shrink-0 flex aspect-video md:aspect-[3/4] border-b-2 border-black md:border-b-0 h-auto w-full md:h-full md:w-auto">
+              <div className="relative flex aspect-video h-auto w-full shrink-0 border-b-2 border-black md:aspect-[3/4] md:h-full md:w-auto md:border-b-0">
                 <Image
                   className="object-cover grayscale md:group-hover:grayscale-0"
                   fill
@@ -136,8 +136,8 @@ export default function Home({ posts }) {
                   alt="Item Image"
                 />
               </div>
-              <div className="flex w-full flex-row justify-center mt-2">
-                <p className="md:group-hover:text-background text-center font-bold font-mono text-xl md:text-3xl capitalize text-black">
+              <div className="mt-2 flex w-full flex-row justify-center">
+                <p className="md:group-hover:text-background text-center font-mono text-xl font-bold capitalize text-black md:text-3xl">
                   {item.name}
                 </p>
               </div>
@@ -145,7 +145,6 @@ export default function Home({ posts }) {
           ))}
         </div>
       </div>
-
     </>
   )
 }
