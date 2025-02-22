@@ -32,7 +32,7 @@ export default function Home({ posts }) {
           <div className="flex w-full flex-row justify-between">
             {menu.map((item, id) => (
               <Link className="group hover:bg-black" key={id} href={item.slug}>
-                <p className="group-hover:text-background text-xl capitalize text-black">
+                <p className="text-xl capitalize text-black group-hover:text-background">
                   {item.name}
                 </p>
               </Link>
@@ -137,7 +137,7 @@ export default function Home({ posts }) {
                 />
               </div>
               <div className="mt-2 flex w-full flex-row justify-center">
-                <p className="md:group-hover:text-background text-center font-mono text-xl font-bold capitalize text-black md:text-3xl">
+                <p className="text-center font-mono text-xl font-bold capitalize text-black md:text-3xl md:group-hover:text-background">
                   {item.name}
                 </p>
               </div>
