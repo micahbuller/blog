@@ -3,24 +3,20 @@ import Link from '@/components/Link'
 
 import music from './assets/images/music.jpg'
 import houseofhealth from './assets/images/houseofhealth.jpg'
-import events from './assets/images/events.jpg'
 import oceanstudio from './assets/images/oceanstudio.jpg'
-import tablarasa from './assets/images/tablarasa.jpg'
 import uiio from './assets/images/uiio.jpg'
 
 const menu = [
-  { name: 'INFO', slug: '/about' },
-  { name: 'BLOG', slug: '/blog' },
-  { name: 'WORKS', slug: 'https://www.uiio.dev/' },
+  { name: 'ABOUT', slug: '/about' },
+  { name: 'BLOG', slug: 'https://micahbuller.substack.com/' },
+  // { name: 'WORKS', slug: 'https://www.uiio.dev/' },
 ]
 
 const items = [
-  { name: 'HOUSE OF HEALTH', slug: 'https://houseofhealth.org/', image: houseofhealth },
-  { name: 'UIIO', slug: 'https://www.uiio.dev/', image: uiio },
-  { name: 'TABLA RASA', slug: 'https://tablarasa.studio/', image: tablarasa },
-  { name: 'OCEAN STUDIO', slug: '/https://www.ocean.studio/', image: oceanstudio },
-  { name: 'MUSIC', slug: '/', image: music },
-  { name: 'EVENTS', slug: '/', image: events },
+  { name: 'CREATIVE SERVICES', slug: 'https://www.ocean.studio/', image: oceanstudio },
+  { name: 'DEV SERVICES', slug: 'https://www.uiio.dev/', image: uiio },
+  { name: 'I PROMOTE HEALTH', slug: 'https://houseofhealth.org/', image: houseofhealth },
+  { name: 'I MAKE MUSIC', slug: 'https://soundcloud.com/swisp', image: music },
 ]
 
 export default function Home({ posts }) {
@@ -116,7 +112,8 @@ export default function Home({ posts }) {
           {/* Memo */}
           <div className="flex w-full flex-row">
             <p className="text-2xl">
-              I am committed to building a life that balances vitality and artistic expression.
+              I design and produce stories, systems, and spaces that make people and ideas
+              healthier.
             </p>
           </div>
         </div>
@@ -136,8 +133,8 @@ export default function Home({ posts }) {
                   alt="Item Image"
                 />
               </div>
-              <div className="mt-2 flex w-full flex-row justify-center">
-                <p className="text-center font-mono text-xl font-bold capitalize text-black md:text-3xl md:group-hover:text-background">
+              <div className="mt-2 flex w-full flex-row md:ml-2">
+                <p className="font-mono text-xl font-bold capitalize text-black md:text-left md:text-2xl md:group-hover:text-background">
                   {item.name}
                 </p>
               </div>
