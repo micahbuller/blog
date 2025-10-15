@@ -3,7 +3,7 @@ import Link from '@/components/Link'
 
 import music from './assets/images/music.jpg'
 import houseofhealth from './assets/images/houseofhealth.jpg'
-import oceanstudio from './assets/images/oceanstudio.jpg'
+import oceanstudio from './assets/images/basecamp.jpg'
 import uiio from './assets/images/uiio.jpg'
 
 const menu = [
